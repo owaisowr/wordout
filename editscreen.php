@@ -8,7 +8,9 @@
 </head>
 <body>
 <?php
-	
+
+$uid = $_SESSION['uid'];
+$pwd = $_SESSION['pwd'];
 
 ?>
 </body>
