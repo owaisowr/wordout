@@ -24,3 +24,5 @@
 		header('Location:editscreen.php');
 	}
 ?>
+</body>
+</html>
