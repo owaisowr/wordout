@@ -6,23 +6,17 @@
 <?php
 	$bid = $_POST['bid'];
 	$pwd = $_POST['pwd'];
-	$sql = "SELECT bid,pwd FROM broadcast";
-	mysql_select_db('wordout');
-	$retval = mysql_query( $sql, $conn );
+	$sql = "SELECT bid,pwd FROM broadcast WHERE bid = '$bid' AND pwd = '$pwd'";
+	$retval = $conn->query($sql);
 	   
 	if(! $retval ) {
-	   die('Could not get data: ' . mysql_error());
+	   die('Could not get data.');
 	}
 	   
-	while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
-	   if ($bid == $row['bid'] && $pwd == $row['pwd']) {
+	while($row = $retval->fetch_assoc()) {
 	   		$_SESSION['bid'] = $bid;
 	   		$_SESSION['pwd'] = $pwd;
 	   		header("Location:editscreen.php");
-	   }
-	   else{
-	   	continue;
-	   }
    }
    echo "No broadcast found.";
 

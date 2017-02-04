@@ -1,9 +1,13 @@
 <?php
 	// Create connection
-	$conn = mysql_connect("localhost", "root", "");
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "wordout";
+	$conn = new mysqli($servername, $username, $password, $dbname);
 
 	// Check connection
-	if (!$conn) {
-    	die("Connection failed.");
+	if ($conn->connect_error) {
+    	die("Connection failed. ".$conn->connect_error);
 		} 
 ?>

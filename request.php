@@ -13,12 +13,11 @@
 	$q = "INSERT INTO broadcast VALUES (DEFAULT, '$bid', '$pwd')";
 	$date = date('Y-m-d H:i:s');
 	$p = "INSERT INTO msgs VALUES ('$bid', 'Your first announcement.' , '$date' )";
-	mysql_select_db('wordout');
-	$insertq = mysql_query($q, $conn);
+	$insertq = $conn->query($q);
 	if (!$insertq) {
 		die("Broadcast already exists.");
 	}else {
-		$insertp = mysql_query($p, $conn);
+		$insertp = $conn->query($p);
 		$_SESSION['bid'] = $bid;
 		$_SESSION['pwd'] = $pwd;
 		header('Location:editscreen.php');

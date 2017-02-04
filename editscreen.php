@@ -10,23 +10,19 @@
 <?php
 
 $bid = $_SESSION['bid'];
-$pwd = $_SESSION['pwd'];
 
-$sql = "SELECT bid, msg, date FROM msgs";
-	   mysql_select_db('wordout');
-	   $retval = mysql_query( $sql, $conn );
+$sql = "SELECT bid, msg, date FROM msgs WHERE bid ='$bid'";
+	   $retval = $conn->query($sql);
 	   
 	   if(! $retval ) {
-	      die('Could not get data: ' . mysql_error());
+	      die('Could not get data.');
 	   }
 	   
-	   while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
-	      if ($bid == $row['bid']){
+	   while($row = $retval->fetch_assoc()) {
 		      echo "bid :{$row['bid']}  <br> ".
 		         "msg : {$row['msg']} <br> ".
 		         "date : {$row['date']} <br> ".
 		         "--------------------------------<br>";
-		  }
 	   }
 
 ?>
