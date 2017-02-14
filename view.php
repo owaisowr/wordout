@@ -2,9 +2,33 @@
 	include("dbh.php");
 	session_start();
 ?>
+<!DOCTYPE html>
 <html>
-<head>
+<head lang="en">
 	<title>View Broadcast - WordOut</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>WordOut</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<style>
+	.bg-1 { 
+    background-color: #1abc9c; /* Green */
+    color: #ffffff;
+	}
+	.link {
+		text-align: left;
+		background-color: white;
+	}
+	.l {
+		padding-top: 25px;
+	}
+	</style>
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
 <?php
@@ -14,12 +38,18 @@
 	   if( $retval->num_rows == 0 ) {
 	      echo "No data found.";
 	   }else {
-	   		while($row = $retval->fetch_assoc()) {
-		      echo "bid :{$row['bid']}  <br> ".
-		         "msg : {$row['msg']} <br> ".
-		         "date : {$row['date']} <br> ".
-		         "<hr>";
-	   		}
+	   		echo '<div class="container-fluid">
+	   		 <div class="row  bg-1">
+	   		 <div class="col-sm-2"></div>
+	   		 <div class="col-sm-4"><h2>'.$bid.'</h2></div>
+	   		 <div class="col-sm-6 l"><a href="logout.php" class="link">LOGOUT</a></div>
+	   		 </div></div>';
+		   while($row = $retval->fetch_assoc()) {
+			     echo "<div class='container-fluid text-center'>
+			     	   <div class='row'>
+			     	   <div class='col-sm-12'>{$row['msg']}<br>{$row['date']}</div>
+			     	   </div></div><br>";
+		   }
 		}
 ?>
 
