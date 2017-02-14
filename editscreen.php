@@ -25,27 +25,32 @@
 </head>
 <body>
 <?php
-
-$bid = $_SESSION['bid'];
-
-$sql = "SELECT bid, msg, date FROM msgs WHERE bid ='$bid'";
-	   $retval = $conn->query($sql);
+	$bid = $_SESSION['bid'];
+	$sql = "SELECT bid, msg, date FROM msgs WHERE bid ='$bid'";
+	$retval = $conn->query($sql);
 	   
-	   if(! $retval ) {
-	      die('Could not get data.');
-	   }
+   if(! $retval ) {
+      die('Could not get data.');
+   }else{
 	   echo '<div class="container-fluid text-center">
-	   <div class="row  bg-1"><div class="col-sm-12"><h2>'.$bid.'</h2></div></div></div>';
+	   		 <div class="row  bg-1">
+	   		 <div class="col-sm-8"><h2>'.$bid.'</h2></div>
+	   		 <div class="col-sm-4"><a href="logout.php">LOGOUT</a></div>
+	   		 </div></div>';
 	   while($row = $retval->fetch_assoc()) {
-		      echo "bid :{$row['bid']}  <br> ".
-		         "msg : {$row['msg']} <br> ".
-		         "date : {$row['date']} <br> ".
-		         "<hr>";
+		     echo "<div class='container-fluid'>
+		     	   <div class='row'>
+		     	   <div class='col-sm-2'></div>
+		     	   <div class='col-sm-4'>{$row['bid']}</div>
+		     	   <div class='col-sm-6'>{$row['msg']}<br>{$row['date']}</div>
+		     	   </div></div><br>";
 	   }
+}
 
 ?>
+
 <form action="add.php" method="POST">
-	<input type="text" name="notice" size="500" placeholder="Add notice"><br>
+	<textarea type="text" name="notice" placeholder="Add notice"></textarea><br>
 	<button type="submit">Add</button>
 </form>
 </body>
