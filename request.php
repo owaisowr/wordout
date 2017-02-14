@@ -8,11 +8,14 @@
 </head>
 <body>
 <?php 
+	function __autoload($Bid) {
+  		require_once $Bid . '.php';
+	}
 	$bid = $_POST["bid"];
 	$pwd = $_POST["pwd"];
-	$q = "INSERT INTO broadcast VALUES (DEFAULT, '$bid', '$pwd')";
-	$date = date('Y-m-d H:i:s');
-	$p = "INSERT INTO msgs VALUES ('$bid', 'Your first announcement.' , '$date' )";
+	$cls = new Bid($bid, $pwd, "First announcement");
+	$q = $cls->insertnewbid();
+	$p = $cls->insertfirstmsg();
 	$insertq = $conn->query($q);
 	if (!$insertq) {
 		die("Broadcast already exists.");
