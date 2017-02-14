@@ -32,26 +32,28 @@
    if(! $retval ) {
       die('Could not get data.');
    }else{
-	   echo '<div class="container-fluid text-center">
+	   echo '<div class="container-fluid">
 	   		 <div class="row  bg-1">
-	   		 <div class="col-sm-8"><h2>'.$bid.'</h2></div>
-	   		 <div class="col-sm-4"><a href="logout.php">LOGOUT</a></div>
+	   		 <div class="col-sm-2"></div>
+	   		 <div class="col-sm-4"><h2>'.$bid.'</h2></div>
+	   		 <div class="col-sm-6"><a href="logout.php">LOGOUT</a></div>
 	   		 </div></div>';
 	   while($row = $retval->fetch_assoc()) {
-		     echo "<div class='container-fluid'>
+		     echo "<div class='container-fluid text-center'>
 		     	   <div class='row'>
-		     	   <div class='col-sm-2'></div>
-		     	   <div class='col-sm-4'>{$row['bid']}</div>
-		     	   <div class='col-sm-6'>{$row['msg']}<br>{$row['date']}</div>
+		     	   <div class='col-sm-12'>{$row['msg']}<br>{$row['date']}</div>
 		     	   </div></div><br>";
 	   }
 }
 
 ?>
-
-<form action="add.php" method="POST">
+<div class="container-fluid text-center">
+<div class="row">
+<div class="col-sm-12">
+	<form action="add.php" method="POST">
 	<textarea type="text" name="notice" placeholder="Add notice"></textarea><br>
 	<button type="submit">Add</button>
-</form>
+	</form>
+</div></div></div>
 </body>
 </html>
