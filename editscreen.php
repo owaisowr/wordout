@@ -22,7 +22,7 @@ $sql = "SELECT bid, msg, date FROM msgs WHERE bid ='$bid'";
 		      echo "bid :{$row['bid']}  <br> ".
 		         "msg : {$row['msg']} <br> ".
 		         "date : {$row['date']} <br> ".
-		         "--------------------------------<br>";
+		         "<hr>";
 	   }
 
 ?>

@@ -23,7 +23,7 @@
          $q = "INSERT INTO broadcast VALUES (DEFAULT, '$this->bid', '$this->pwd')";
          return $q;
       }
-      function insertfirstmsg(){
+      function insertmsg(){
          $date = date('Y-m-d H:i:s');
          $q = "INSERT INTO msgs VALUES ('$this->bid', '$this->msg' , '$date' )";
          return $q;

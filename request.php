@@ -15,7 +15,7 @@
 	$pwd = $_POST["pwd"];
 	$cls = new Bid($bid, $pwd, "First announcement");
 	$q = $cls->insertnewbid();
-	$p = $cls->insertfirstmsg();
+	$p = $cls->insertmsg();
 	$insertq = $conn->query($q);
 	if (!$insertq) {
 		die("Broadcast already exists.");
