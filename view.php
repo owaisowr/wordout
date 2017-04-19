@@ -38,12 +38,24 @@
 	   if( $retval->num_rows == 0 ) {
 	      echo "No data found.";
 	   }else {
-	   		echo '<div class="container-fluid">
-	   		 <div class="row  bg-1">
-	   		 <div class="col-sm-2"></div>
-	   		 <div class="col-sm-4"><h2>'.$bid.'</h2></div>
-	   		 <div class="col-sm-6 l"><a href="logout.php" class="link">LOGOUT</a></div>
-	   		 </div></div>';
+	   		echo '<nav class="navbar navbar-inverse">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="#">'.$bid.'</a>
+			    </div>
+			    <ul class="nav navbar-nav">
+			      <li class="active"><a href="index.php">Home</a></li>
+			      
+				  <li class="dropdown">
+			        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Options
+			        <span class="caret"></span></a>
+			        <ul class="dropdown-menu">
+				      <li><a href="logout.php">Logout</a></li>
+			        </ul>
+			      </li>
+			    </ul>
+			  </div>
+			</nav>';
 		   while($row = $retval->fetch_assoc()) {
 			     echo "<div class='container-fluid text-center'>
 			     	   <div class='row'>

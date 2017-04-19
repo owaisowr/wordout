@@ -28,6 +28,10 @@
          $q = "INSERT INTO msgs VALUES ('$this->bid', '$this->msg' , '$date' )";
          return $q;
       } 
+      function clearmsgs(){
+         $q = "DELETE FROM msgs WHERE bid='$this->bid'";
+         return $q;
+      }
    }
 
 ?>
