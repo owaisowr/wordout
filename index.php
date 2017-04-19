@@ -2,6 +2,7 @@
 <html>
 <head lang="en">
 	<meta charset="utf-8">
+	<meta name="theme-color" content="#1abc9c">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>WordOut</title>
 	<!-- Latest compiled and minified CSS -->

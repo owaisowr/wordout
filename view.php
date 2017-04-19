@@ -7,6 +7,7 @@
 <head lang="en">
 	<title>View Broadcast - WordOut</title>
 	<meta charset="utf-8">
+	<meta name="theme-color" content="#000">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>WordOut</title>
 	<!-- Latest compiled and minified CSS -->
