@@ -4,7 +4,7 @@ Broadcast Notices
 - Users can view a broadcast using BID.
 - An authorized broadcaster can add and clear notices.
 
-Live demo on: wordout.gq
+Live demo on: [a link](http://wordout.gq)
 
 Database Information:
 
