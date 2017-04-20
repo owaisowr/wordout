@@ -7,7 +7,7 @@
 	function __autoload($Bid) {
   		require_once $Bid . '.php';
 	}
-	$cls = new Bid($bid);
+	$cls = new Bid($bid, NULL, NULL);
 	$q = $cls->clearmsgs();
 	$delval = $conn->query($q);
 	if (! $delval) {

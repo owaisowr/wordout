@@ -31,7 +31,7 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body onload="window.location='#last';">
 <?php
 	$bid = $_POST['bid'];
 	$sql = "SELECT bid, msg, date FROM msgs WHERE bid = '$bid'";
@@ -58,13 +58,15 @@
 			  </div>
 			</nav>';
 		   while($row = $retval->fetch_assoc()) {
-			     echo "<div class='container-fluid text-center'>
-			     	   <div class='row'>
-			     	   <div class='col-sm-12'>{$row['msg']}<br>{$row['date']}</div>
-			     	   </div></div><br>";
+			     echo "<div class='panel panel-info'>
+  <div class='panel-body'>{$row['msg']}</div>
+  <div class='panel-footer'>{$row['date']}</div>
+</div>";
 		   }
 		}
 ?>
-
+<div id="last">&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
 </body>
 </html>

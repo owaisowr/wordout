@@ -12,8 +12,9 @@
 	<title>WordOut</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<style>
-	.bg-1 { 
+
+     <style>
+    .bg-1 { 
     background-color: #1abc9c; /* Green */
     color: #ffffff;
 	}
@@ -24,7 +25,7 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body onload="window.location='#edit';">
 <?php
 	$bid = $_SESSION['bid'];
 	$sql = "SELECT bid, msg, date FROM msgs WHERE bid ='$bid'";
@@ -53,10 +54,10 @@
 			  </div>
 			</nav>';
 	   while($row = $retval->fetch_assoc()) {
-		     echo "<div class='container-fluid text-center'>
-		     	   <div class='row'>
-		     	   <div class='col-sm-12'>{$row['msg']}<br>{$row['date']}</div>
-		     	   </div></div><br>";
+		     echo "<div class='panel panel-info'>
+  <div class='panel-body'>{$row['msg']}</div>
+  <div class='panel-footer'>{$row['date']}</div>
+</div>";
 	   }
 }
 
@@ -64,10 +65,13 @@
 <div class="container-fluid text-center">
 <div class="row">
 <div class="col-sm-12">
-	<form action="add.php" method="POST">
+	<form action="add.php" method="POST" id="edit">
 	<textarea type="text" name="notice" placeholder="Add notice"></textarea><br>
 	<button type="submit">Add</button>
 	</form>
 </div></div></div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
 </body>
 </html>

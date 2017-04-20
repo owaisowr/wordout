@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
 	<meta charset="utf-8">
-	<meta name="theme-color" content="#1abc9c">
+	<meta name="theme-color" content="#000">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>WordOut</title>
 	<!-- Latest compiled and minified CSS -->
@@ -20,9 +20,32 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="container-fluid text-center">
+	<nav class = "navbar navbar-inverse" role = "navigation">
+   
+   <div class = "navbar-header">
+      <button type = "button" class = "navbar-toggle" 
+         data-toggle = "collapse" data-target = "#example-navbar-collapse">
+         <span class = "sr-only">Toggle navigation</span>
+         <span class = "icon-bar"></span>
+         <span class = "icon-bar"></span>
+         <span class = "icon-bar"></span>
+      </button>
+		
+      <a class = "navbar-brand" href = "#">WordOut</a>
+   </div>
+   
+   <div class = "collapse navbar-collapse" id = "example-navbar-collapse">
+	
+      <ul class = "nav navbar-nav">
+         <li><a href = "about.html">About</a></li>
+         <li><a href = "credits.html">Credits</a></li>
+         <li><a href = "guidelines.html">Guidelines</a></li>		
+      </ul>
+   </div>
+   
+</nav>
 
-	<div class="row  bg-1"><div class="col-sm-12"><h2>Welcome to WordOut</h2></div></div>
+        <div class="container-fluid text-center">
 	<div class="row">
 		<h1>Broadcast Important Notices and Keep Your People in the Loop!</h1>
 	</div>
@@ -62,6 +85,8 @@
 	<div class="col-sm-4"></div>
 	</div>
 </div>
-
+<div>&nbsp;</div>
+<div>&nbsp;</div>
+<div>&nbsp;</div>
 </body>
 </html>
