@@ -9,10 +9,11 @@
 	<meta name="theme-color" content="#000">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
 	<title>WordOut</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
+	
      <style>
     .bg-1 { 
     background-color: #1abc9c; /* Green */
@@ -66,7 +67,10 @@
 <div class="row">
 <div class="col-sm-12">
 	<form action="add.php" method="POST" id="edit">
-	<textarea type="text" name="notice" placeholder="Add notice"></textarea><br>
+	<textarea type="text" name="notice"></textarea>
+	<script>
+	CKEDITOR.replace( 'notice' );
+	</script>
 	<button type="submit">Add</button>
 	</form>
 </div></div></div>
